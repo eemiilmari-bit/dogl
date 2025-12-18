@@ -1,0 +1,253 @@
+:root {
+  --bg: #0b0b0f;
+  --panel: #12131a;
+  --text: #e7e7f0;
+  --muted: #9ca3af;
+  --accent: #7c3aed;
+  --danger: #ef4444;
+  --success: #10b981;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Inter", system-ui, -apple-system, sans-serif;
+  display: flex;
+  justify-content: center;
+  padding: 32px 16px 48px;
+}
+
+.frame {
+  width: min(840px, 100%);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.intro h1 {
+  margin: 4px 0;
+  font-size: clamp(28px, 3vw, 36px);
+}
+
+.intro .sub {
+  color: var(--muted);
+  margin: 0;
+}
+
+.muted {
+  color: var(--muted);
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 12px;
+  margin: 0;
+  color: var(--accent);
+}
+
+.card {
+  background: var(--panel);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
+  animation: float-in 450ms ease forwards;
+  opacity: 0;
+  transform: translateY(8px);
+}
+
+.question + .question {
+  margin-top: 16px;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  padding-top: 16px;
+}
+
+.question h2 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.question-head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.number {
+  width: 28px;
+  height: 28px;
+  border-radius: 10px;
+  display: grid;
+  place-items: center;
+  background: rgba(124, 58, 237, 0.14);
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.options {
+  display: grid;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.option {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 10px;
+  align-items: center;
+  padding: 12px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  transition: border-color 160ms ease, transform 160ms ease;
+}
+
+.option:hover {
+  border-color: rgba(124, 58, 237, 0.5);
+  transform: translateY(-2px);
+}
+
+.option input {
+  accent-color: var(--accent);
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.field-label {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.field input {
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--text);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 12px;
+  border-radius: 12px;
+  font-size: 15px;
+}
+
+.actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  border: none;
+  border-radius: 12px;
+  padding: 12px 16px;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  cursor: pointer;
+  transition: transform 160ms ease, box-shadow 160ms ease, background 160ms ease;
+}
+
+.btn.primary {
+  background: var(--accent);
+  color: #0b0713;
+  box-shadow: 0 10px 30px rgba(124, 58, 237, 0.3);
+}
+
+.btn.primary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 12px 36px rgba(124, 58, 237, 0.35);
+}
+
+.btn.ghost {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: var(--text);
+}
+
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.btn.pop {
+  animation: pop 200ms ease;
+}
+
+.feedback h3 {
+  margin: 0 0 6px;
+}
+
+.feedback .verdict {
+  font-size: 22px;
+  font-weight: 800;
+}
+
+.feedback .verdict.good {
+  color: var(--success);
+}
+
+.feedback .verdict.bad {
+  color: var(--danger);
+}
+
+.review-item {
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  padding-top: 12px;
+  margin-top: 12px;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 10px;
+  border-radius: 10px;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.badge.good {
+  background: rgba(16, 185, 129, 0.14);
+  color: var(--success);
+}
+
+.badge.bad {
+  background: rgba(239, 68, 68, 0.14);
+  color: var(--danger);
+}
+
+.hidden {
+  display: none;
+}
+
+.fade-in {
+  animation: fade-in 400ms ease 80ms forwards;
+  opacity: 0;
+}
+
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes float-in {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pop {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.03); }
+  100% { transform: scale(1); }
+}

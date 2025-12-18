@@ -1,0 +1,14 @@
+{
+  "name": "dogl",
+  "version": "1.0.0",
+  "description": "Minimal dark quiz app distinguishing clown vs kylpmast.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "package": "zip -r quiz-app.zip public server.js package.json README.md"
+  },
+  "keywords": ["quiz", "dark", "minimal"],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs"
+}

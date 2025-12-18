@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clown or Kylpmast Quiz</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="frame">
+    <header class="intro fade-in">
+      <p class="eyebrow">Dark-mode micro quiz</p>
+      <h1>Are you clown or kylpmast?</h1>
+      <p class="sub">Answer the four prompts. No hints, just vibes.</p>
+    </header>
+
+    <main id="quiz" class="card fade-in">
+      <form id="quiz-form" novalidate>
+        <section class="question" data-id="1">
+          <div class="question-head">
+            <span class="number">1</span>
+            <h2>Ooks dedaxii koiran Kaa</h2>
+          </div>
+          <div class="options">
+            <label class="option">
+              <input type="radio" name="q1" value="Joo" required>
+              <span>A: Joo</span>
+            </label>
+            <label class="option">
+              <input type="radio" name="q1" value="Dedax">
+              <span>B: Dedax</span>
+            </label>
+          </div>
+        </section>
+
+        <section class="question" data-id="2">
+          <div class="question-head">
+            <span class="number">2</span>
+            <h2>Miksi Eemi sanoo moii</h2>
+          </div>
+          <label class="field">
+            <span class="field-label">Written answer</span>
+            <input type="text" name="q2" autocomplete="off" placeholder="Type here" required>
+          </label>
+        </section>
+
+        <section class="question" data-id="3">
+          <div class="question-head">
+            <span class="number">3</span>
+            <h2>Kuka pidättää crashoutdogen tekijänoikeudet?</h2>
+          </div>
+          <label class="field">
+            <span class="field-label">Written answer</span>
+            <input type="text" name="q3" autocomplete="off" placeholder="Type here" required>
+          </label>
+        </section>
+
+        <section class="question" data-id="4">
+          <div class="question-head">
+            <span class="number">4</span>
+            <h2>Hoah!!</h2>
+          </div>
+          <div class="options">
+            <label class="option">
+              <input type="radio" name="q4" value="se on sarkastinen nauru" required>
+              <span>A: se on sarkastinen nauru</span>
+            </label>
+            <label class="option">
+              <input type="radio" name="q4" value="pelleily">
+              <span>B: pelleily</span>
+            </label>
+            <label class="option">
+              <input type="radio" name="q4" value="mitvit">
+              <span>C: mitvit</span>
+            </label>
+            <label class="option">
+              <input type="radio" name="q4" value="nopeevaa">
+              <span>D: nopeevaa</span>
+            </label>
+          </div>
+        </section>
+
+        <div class="actions">
+          <button type="submit" class="btn primary">Submit</button>
+          <button type="button" id="review-toggle" class="btn ghost" disabled>Review answers</button>
+        </div>
+      </form>
+    </main>
+
+    <section id="feedback" class="feedback card hidden fade-in"></section>
+    <section id="review" class="review card hidden fade-in"></section>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
